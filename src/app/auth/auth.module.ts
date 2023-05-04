@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { RegisterComponent } from '../register/register.component';
 
 
+const routes = [
+  {
+    path: 'register',
+    component: RegisterComponent,
+  }
+]
 
 @NgModule({
-  declarations: [],
+  declarations: [RegisterComponent],
   imports: [
-    CommonModule
+    CommonModule,RouterModule.forChild(routes)
   ]
 })
 export class AuthModule { }

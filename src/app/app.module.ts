@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register/register.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
