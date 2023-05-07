@@ -23,6 +23,7 @@ const authReducer = createReducer(initialState,
 // for ahead of time compilation, code in production
 
 export function reducers(state: AuthStateInterface, action: Action) {
+  // state=state of reducer, action = what we change in state
   return authReducer(state,action)
 }
 
