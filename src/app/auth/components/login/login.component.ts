@@ -7,11 +7,12 @@ import {combineLatest} from 'rxjs'
 import {BackendErrorMessages} from 'src/app/shared/components/backendErrorMessages/backendErrorMessages.component'
 import {authActions} from '../../store/actions'
 import {selectIsSubmitting, selectValidationErrors} from '../../store/reducers'
+import {LoginRequestInterface} from '../../types/loginRequest.interface'
 import {RegisterRequestInterface} from '../../types/registerRequest.interface'
 
 @Component({
-  selector: 'mc-register',
-  templateUrl: './register.component.html',
+  selector: 'mc-login',
+  templateUrl: './login.component.html',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -20,9 +21,8 @@ import {RegisterRequestInterface} from '../../types/registerRequest.interface'
     BackendErrorMessages,
   ],
 })
-export class RegisterComponent {
+export class LoginComponent {
   form = this.fb.nonNullable.group({
-    username: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
   })
@@ -35,9 +35,9 @@ export class RegisterComponent {
 
   onSubmit() {
     console.log('form', this.form.getRawValue())
-    const request: RegisterRequestInterface = {
+    const request: LoginRequestInterface = {
       user: this.form.getRawValue(),
     }
-    this.store.dispatch(authActions.register({request}))
+    this.store.dispatch(authActions.login({request}))
   }
 }

@@ -8,7 +8,7 @@ import {BackendErrorsInterface} from '../../types/backendErrors.interface'
   standalone: true,
   imports: [CommonModule],
 })
-export class BacknedErrorMessages implements OnInit {
+export class BackendErrorMessages implements OnInit {
   @Input() backendErrors: BackendErrorsInterface = {}
 
   errorMessages: string[] = []
